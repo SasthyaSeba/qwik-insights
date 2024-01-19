@@ -1,7 +1,5 @@
 import {
   component$,
-  type JSXNode,
-  type PropFunction,
   useSignal,
   useStore,
   useStylesScoped$,
@@ -14,6 +12,8 @@ import {
   HTMLFragment,
   type PropsOf,
   Slot,
+  type QRL,
+  type JSXOutput,
 } from "@builder.io/qwik";
 import { delay } from "../streaming/demo";
 import { isServer } from "@builder.io/qwik/build";
@@ -373,7 +373,7 @@ export const Issue2889 = component$(() => {
 type Product = string;
 
 export type ProductRelationProps = {
-  render$: PropFunction<(products: Product[]) => JSXNode>;
+  render$: QRL<(products: Product[]) => JSXOutput>;
 };
 
 export const ProductRelations = component$((props: ProductRelationProps) => {
